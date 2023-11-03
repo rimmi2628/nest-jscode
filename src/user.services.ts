@@ -24,8 +24,9 @@ async getAllUser(): Promise<UserDto[]> {
     return userData;
 }
 
-async getOneUser(email: string,password:string): Promise<any> {
- this.UserModel.findOne({ email,password }).exec();
+async getOneUser(email: string): Promise<any> {
+ const data=await this.UserModel.findOne({ email }).exec();
+
 }
 
 
